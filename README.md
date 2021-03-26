@@ -8,3 +8,8 @@ optional arguments:
   -h, --help  show this help message and exit
   
   --json      only if we want to generate json
+  
+### Test are present in bank_csv_dumping_test.py
+To run test cases run below command
+
+>>>$ pytest bank_csv_dumping_test.py
