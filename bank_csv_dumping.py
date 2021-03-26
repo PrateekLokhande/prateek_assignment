@@ -28,7 +28,7 @@ def date_converter(date):
         print("Please check the date formate", exc)
 
 
-def data_genrator(row):
+def data_generator(row):
     '''Return a data which is require to save in csv file.'''
 
     converted_euro = ""
@@ -72,7 +72,7 @@ def get_consolidated_bank_statement():
             with open(file) as csv_file:
                 csv_reader = csv.DictReader(csv_file)
                 for row in csv_reader:
-                    csv_dump_for_bank.append(data_genrator(row))
+                    csv_dump_for_bank.append(data_generator(row))
     return csv_dump_for_bank
 
 
@@ -116,6 +116,6 @@ def main(args):
 
 if __name__ == "__main__":
     parser_args = argparse.ArgumentParser('Arguments for consolidated bank statement generation')
-    parser_args.add_argument('--json', action='store_true', default=False)
+    parser_args.add_argument('--json', action='store_true', help='only if we want to generate json', default=False)
     args = parser_args.parse_args()
     main(args)
